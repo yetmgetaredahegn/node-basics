@@ -1,4 +1,9 @@
 import http from 'http';
+import fs from 'fs/promises'
+import url from 'url';
+
+const _filename = url.fileURLToPath(import.meta.url);
+const _dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const PORT = process.env.PORT;
 const server = http.createServer((req, res) => {
